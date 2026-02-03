@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LACOSTE MM | Oficial 🇫🇷</title>
+    <title>LACOSTE MM 1 | Elite Service 🇫🇷</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -32,7 +32,7 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.8);
         }
 
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 35px; color: white; margin-bottom: 5px; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 32px; color: white; margin-bottom: 5px; text-transform: uppercase; }
         .logo span { color: var(--verde-lacoste); }
         .subtitle { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; }
 
@@ -63,14 +63,14 @@
             text-transform: uppercase; border-radius: 12px; transition: 0.4s;
         }
 
-        .btn-main:disabled { background: #1a1a1a; cursor: not-allowed; color: #444; }
+        .btn-main:hover { transform: scale(1.02); background: #006337; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <div class="logo">LACOSTE<span>MM</span></div>
-    <div class="subtitle">France Private Sector 🐊</div>
+    <div class="logo">LACOSTE<span>MM 1</span></div>
+    <div class="subtitle">France High Society 🐊</div>
 
     <button id="btn-login" class="btn-discord" onclick="autenticar()">Login com Discord 🇫🇷</button>
 
@@ -93,17 +93,15 @@
             </select>
         </div>
 
-        <button class="btn-main" onclick="abrirTicket()">Solicitar Middleman</button>
+        <button class="btn-main" onclick="abrirTicket()">Solicitar Middleman 1</button>
     </div>
 </div>
 
 <script>
     const CLIENT_ID = "1468245734057967670";
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1468251935500144766/RExtwabquHir6fmyET1p9igNb5dH_4DCp989oN9HIscRswtRt7CkMHLFC5lM2UwgTJnI";
-    let logado = false;
     let userId = "";
 
-    // Lógica de Autenticação
     window.onload = () => {
         const fragment = new URLSearchParams(window.location.hash.slice(1));
         const token = fragment.get('access_token');
@@ -121,7 +119,6 @@
                 document.getElementById('user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
                 document.getElementById('form-area').style.opacity = '1';
                 document.getElementById('form-area').style.pointerEvents = 'all';
-                logado = true;
                 window.history.replaceState({}, document.title, "/");
             });
         }
@@ -142,21 +139,21 @@
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                content: "SOLICITACAO_LACOSTE",
+                content: "SOLICITACAO_LACOSTE_1",
                 embeds: [{
-                    title: "🐊 NOVO NEGÓCIO - LACOSTE MM",
+                    title: "🐊 NOVO NEGÓCIO - LACOSTE MM 1",
                     color: 17664,
                     fields: [
                         { name: "👤 Cliente", value: `<@${userId}>`, inline: true },
                         { name: "💰 Valor", value: "R$ " + val, inline: true },
                         { name: "📋 Método", value: met, inline: true }
                     ],
-                    footer: { text: "🇫🇷 Autenticado via Lacoste System" }
+                    footer: { text: "🇫🇷 Autenticado via Lacoste MM 1" }
                 }]
             })
         });
 
-        alert("🇫🇷 Ticket solicitado! Verifique o Discord.");
+        alert("🇫🇷 Ticket solicitado com sucesso!");
     }
 </script>
 
