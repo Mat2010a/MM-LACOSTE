@@ -3,171 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LACOSTE MM | Premium Service</title>
+    <title>LACOSTE MM | Oficial 🇫🇷</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --verde-lacoste: #004526;
-            --verde-brilho: #008445;
             --azul-franca: #002395;
             --vermelho-franca: #ED2939;
         }
 
         body { 
             background: radial-gradient(circle at center, #0a1f14 0%, #050505 100%);
-            color: white; 
-            font-family: 'Poppins', sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            margin: 0;
-            overflow-x: hidden;
+            color: white; font-family: 'Poppins', sans-serif; 
+            display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; margin: 0; overflow-x: hidden;
         }
 
-        /* Linhas da Bandeira da França nas bordas */
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--azul-franca) 33.3%, #fff 33.3%, #fff 66.6%, var(--vermelho-franca) 66.6%); z-index: 100; }
+        body::before { 
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 6px; 
+            background: linear-gradient(90deg, var(--azul-franca) 33.3%, #fff 33.3%, #fff 66.6%, var(--vermelho-franca) 66.6%); 
+            z-index: 100; 
+        }
 
         .card { 
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(15px);
-            border-radius: 25px; 
-            padding: 40px; 
-            width: 100%; 
-            max-width: 420px; 
-            border: 1px solid rgba(0, 69, 38, 0.3);
-            text-align: center; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 20px rgba(0, 69, 38, 0.2);
-            position: relative;
+            background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(15px);
+            border-radius: 25px; padding: 40px; width: 90%; max-width: 400px; 
+            border: 1px solid rgba(0, 69, 38, 0.3); text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
         }
 
-        .logo { 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 38px; 
-            color: white;
-            letter-spacing: -1px;
-            margin-bottom: 0;
-        }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 35px; color: white; margin-bottom: 5px; }
         .logo span { color: var(--verde-lacoste); }
-        
-        .subtitle { 
-            font-size: 10px; 
-            color: #666; 
-            text-transform: uppercase; 
-            letter-spacing: 4px; 
-            margin-bottom: 35px;
-            font-weight: 600;
-        }
-
-        .input-group { text-align: left; margin-bottom: 20px; }
-        
-        label { 
-            font-size: 11px; 
-            text-transform: uppercase;
-            color: var(--verde-lacoste); 
-            font-weight: 700;
-            margin-left: 5px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        input, select { 
-            width: 100%; 
-            padding: 16px; 
-            border-radius: 12px; 
-            border: 1px solid #222; 
-            background: rgba(0,0,0,0.6); 
-            color: white; 
-            font-size: 15px;
-            transition: 0.3s;
-            outline: none;
-            box-sizing: border-box;
-        }
-
-        input:focus { border-color: var(--verde-lacoste); box-shadow: 0 0 10px rgba(0, 69, 38, 0.5); }
+        .subtitle { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 30px; }
 
         .btn-discord {
-            background: #5865F2;
-            color: white;
-            border: none;
-            padding: 18px;
-            width: 100%;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: 0.3s;
-            margin-bottom: 20px;
+            background: #5865F2; color: white; border: none; padding: 18px; width: 100%;
+            border-radius: 12px; font-weight: 700; cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+
+        .user-badge {
+            display: none; background: rgba(255,255,255,0.05); padding: 12px;
+            border-radius: 15px; margin-bottom: 25px; align-items: center; gap: 15px;
+            border: 1px solid var(--verde-lacoste);
+        }
+        .user-badge img { width: 45px; border-radius: 50%; }
+
+        .form-group { text-align: left; margin-bottom: 20px; }
+        label { font-size: 11px; color: var(--verde-lacoste); font-weight: 700; margin-left: 5px; display: block; margin-bottom: 8px; }
+        
+        input, select { 
+            width: 100%; padding: 16px; border-radius: 12px; border: 1px solid #222; 
+            background: #000; color: white; outline: none; box-sizing: border-box;
         }
 
         .btn-main { 
-            width: 100%; 
-            padding: 20px; 
-            border: none; 
-            font-weight: 900; 
-            background: var(--verde-lacoste); 
-            color: white; 
-            cursor: pointer; 
-            text-transform: uppercase; 
-            border-radius: 12px; 
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            width: 100%; padding: 20px; border: none; font-weight: 900; 
+            background: var(--verde-lacoste); color: white; cursor: pointer; 
+            text-transform: uppercase; border-radius: 12px; transition: 0.4s;
         }
 
-        .btn-main:hover { 
-            background: var(--verde-brilho);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 132, 69, 0.3);
-        }
-
-        /* Badge de Logado */
-        #user-info {
-            display: none;
-            background: rgba(255,255,255,0.05);
-            padding: 10px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            align-items: center;
-            gap: 12px;
-        }
-        #user-info img { width: 40px; border-radius: 50%; border: 2px solid var(--verde-lacoste); }
-
-        .croc-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+        .btn-main:disabled { background: #1a1a1a; cursor: not-allowed; color: #444; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <span class="croc-icon">🐊</span>
     <div class="logo">LACOSTE<span>MM</span></div>
-    <div class="subtitle">France Private Sector</div>
+    <div class="subtitle">France Private Sector 🐊</div>
 
-    <button id="btn-login" class="btn-discord" onclick="fazerLogin()">
-        Conectar Discord 🇫🇷
-    </button>
+    <button id="btn-login" class="btn-discord" onclick="autenticar()">Login com Discord 🇫🇷</button>
 
-    <div id="user-info">
+    <div id="user-badge" class="user-badge">
         <img id="user-avatar" src="">
-        <span id="user-tag" style="font-weight: 600; font-size: 14px;"></span>
+        <span id="user-name" style="font-weight: 600;"></span>
     </div>
 
-    <div id="form-content" style="opacity: 0.4; pointer-events: none;">
-        <div class="input-group">
-            <label>Valor da Transação</label>
+    <div id="form-area" style="opacity: 0.3; pointer-events: none;">
+        <div class="form-group">
+            <label>VALOR DO NEGÓCIO</label>
             <input type="number" id="valor" placeholder="R$ 0,00">
         </div>
 
-        <div class="input-group">
-            <label>Tipo de Negócio</label>
-            <select id="tipo">
-                <option value="Pix">Venda via Pix</option>
-                <option value="Cross-Trade">Cross-Trade Premium</option>
+        <div class="form-group">
+            <label>MÉTODO</label>
+            <select id="metodo">
+                <option value="PIX">PIX (FRANCE CASH)</option>
+                <option value="CROSS-TRADE">CROSS TRADE</option>
             </select>
         </div>
 
@@ -176,50 +98,65 @@
 </div>
 
 <script>
-    // Link da sua Webhook que você mandou
+    const CLIENT_ID = "1468245734057967670";
     const WEBHOOK_URL = "https://discord.com/api/webhooks/1468251935500144766/RExtwabquHir6fmyET1p9igNb5dH_4DCp989oN9HIscRswtRt7CkMHLFC5lM2UwgTJnI";
+    let logado = false;
+    let userId = "";
 
-    function fazerLogin() {
-        // Aqui você integrará o seu sistema de autenticação
-        alert("Integrando com o sistema de Login...");
-        // Exemplo de liberação manual para teste:
-        // liberarSite({ username: "SeuNome", avatar: "link" });
-    }
+    // Lógica de Autenticação
+    window.onload = () => {
+        const fragment = new URLSearchParams(window.location.hash.slice(1));
+        const token = fragment.get('access_token');
 
-    function liberarSite(user) {
-        document.getElementById('btn-login').style.display = 'none';
-        document.getElementById('user-info').style.display = 'flex';
-        document.getElementById('form-content').style.opacity = '1';
-        document.getElementById('form-content').style.pointerEvents = 'all';
-        document.getElementById('user-tag').innerText = user.username;
-        document.getElementById('user-avatar').src = user.avatar;
+        if (token) {
+            fetch('https://discord.com/api/users/@me', {
+                headers: { authorization: `Bearer ${token}` }
+            })
+            .then(res => res.json())
+            .then(user => {
+                userId = user.id;
+                document.getElementById('btn-login').style.display = 'none';
+                document.getElementById('user-badge').style.display = 'flex';
+                document.getElementById('user-name').innerText = user.username;
+                document.getElementById('user-avatar').src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`;
+                document.getElementById('form-area').style.opacity = '1';
+                document.getElementById('form-area').style.pointerEvents = 'all';
+                logado = true;
+                window.history.replaceState({}, document.title, "/");
+            });
+        }
+    };
+
+    function autenticar() {
+        const redirect = encodeURIComponent(window.location.href.split('#')[0]);
+        window.location.href = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${redirect}&response_type=token&scope=identify`;
     }
 
     async function abrirTicket() {
-        const v = document.getElementById('valor').value;
-        const t = document.getElementById('tipo').value;
+        const val = document.getElementById('valor').value;
+        const met = document.getElementById('metodo').value;
 
-        if(!v) return alert("Por favor, informe o valor.");
+        if(!val) return alert("Insira o valor!");
 
         await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                content: "SOLICITACAO_SITE_LACOSTE",
+                content: "SOLICITACAO_LACOSTE",
                 embeds: [{
-                    title: "🐊 NOVO NEGÓCIO LACOSTE",
-                    description: `Um novo ticket foi solicitado via site oficial.`,
+                    title: "🐊 NOVO NEGÓCIO - LACOSTE MM",
                     color: 17664,
                     fields: [
-                        { name: "💰 Valor", value: "R$ " + v, inline: true },
-                        { name: "📋 Tipo", value: t, inline: true }
+                        { name: "👤 Cliente", value: `<@${userId}>`, inline: true },
+                        { name: "💰 Valor", value: "R$ " + val, inline: true },
+                        { name: "📋 Método", value: met, inline: true }
                     ],
-                    footer: { text: "🇫🇷 Lacoste MM - Autenticado" }
+                    footer: { text: "🇫🇷 Autenticado via Lacoste System" }
                 }]
             })
         });
 
-        alert("🇫🇷 Ticket enviado ao Discord!");
+        alert("🇫🇷 Ticket solicitado! Verifique o Discord.");
     }
 </script>
 
