@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LACOSTE MM | Premium Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --verde-lacoste: #004526;
+            --verde-brilho: #008445;
+            --azul-franca: #002395;
+            --vermelho-franca: #ED2939;
+        }
+
+        body { 
+            background: radial-gradient(circle at center, #0a1f14 0%, #050505 100%);
+            color: white; 
+            font-family: 'Poppins', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Linhas da Bandeira da França nas bordas */
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, var(--azul-franca) 33.3%, #fff 33.3%, #fff 66.6%, var(--vermelho-franca) 66.6%); z-index: 100; }
+
+        .card { 
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 25px; 
+            padding: 40px; 
+            width: 100%; 
+            max-width: 420px; 
+            border: 1px solid rgba(0, 69, 38, 0.3);
+            text-align: center; 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 20px rgba(0, 69, 38, 0.2);
+            position: relative;
+        }
+
+        .logo { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 38px; 
+            color: white;
+            letter-spacing: -1px;
+            margin-bottom: 0;
+        }
+        .logo span { color: var(--verde-lacoste); }
+        
+        .subtitle { 
+            font-size: 10px; 
+            color: #666; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+
+        .input-group { text-align: left; margin-bottom: 20px; }
+        
+        label { 
+            font-size: 11px; 
+            text-transform: uppercase;
+            color: var(--verde-lacoste); 
+            font-weight: 700;
+            margin-left: 5px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select { 
+            width: 100%; 
+            padding: 16px; 
+            border-radius: 12px; 
+            border: 1px solid #222; 
+            background: rgba(0,0,0,0.6); 
+            color: white; 
+            font-size: 15px;
+            transition: 0.3s;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        input:focus { border-color: var(--verde-lacoste); box-shadow: 0 0 10px rgba(0, 69, 38, 0.5); }
+
+        .btn-discord {
+            background: #5865F2;
+            color: white;
+            border: none;
+            padding: 18px;
+            width: 100%;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .btn-main { 
+            width: 100%; 
+            padding: 20px; 
+            border: none; 
+            font-weight: 900; 
+            background: var(--verde-lacoste); 
+            color: white; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            border-radius: 12px; 
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-main:hover { 
+            background: var(--verde-brilho);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 132, 69, 0.3);
+        }
+
+        /* Badge de Logado */
+        #user-info {
+            display: none;
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            align-items: center;
+            gap: 12px;
+        }
+        #user-info img { width: 40px; border-radius: 50%; border: 2px solid var(--verde-lacoste); }
+
+        .croc-icon { font-size: 24px; margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <span class="croc-icon">🐊</span>
+    <div class="logo">LACOSTE<span>MM</span></div>
+    <div class="subtitle">France Private Sector</div>
+
+    <button id="btn-login" class="btn-discord" onclick="fazerLogin()">
+        Conectar Discord 🇫🇷
+    </button>
+
+    <div id="user-info">
+        <img id="user-avatar" src="">
+        <span id="user-tag" style="font-weight: 600; font-size: 14px;"></span>
+    </div>
+
+    <div id="form-content" style="opacity: 0.4; pointer-events: none;">
+        <div class="input-group">
+            <label>Valor da Transação</label>
+            <input type="number" id="valor" placeholder="R$ 0,00">
+        </div>
+
+        <div class="input-group">
+            <label>Tipo de Negócio</label>
+            <select id="tipo">
+                <option value="Pix">Venda via Pix</option>
+                <option value="Cross-Trade">Cross-Trade Premium</option>
+            </select>
+        </div>
+
+        <button class="btn-main" onclick="abrirTicket()">Solicitar Middleman</button>
+    </div>
+</div>
+
+<script>
+    // Link da sua Webhook que você mandou
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1468251935500144766/RExtwabquHir6fmyET1p9igNb5dH_4DCp989oN9HIscRswtRt7CkMHLFC5lM2UwgTJnI";
+
+    function fazerLogin() {
+        // Aqui você integrará o seu sistema de autenticação
+        alert("Integrando com o sistema de Login...");
+        // Exemplo de liberação manual para teste:
+        // liberarSite({ username: "SeuNome", avatar: "link" });
+    }
+
+    function liberarSite(user) {
+        document.getElementById('btn-login').style.display = 'none';
+        document.getElementById('user-info').style.display = 'flex';
+        document.getElementById('form-content').style.opacity = '1';
+        document.getElementById('form-content').style.pointerEvents = 'all';
+        document.getElementById('user-tag').innerText = user.username;
+        document.getElementById('user-avatar').src = user.avatar;
+    }
+
+    async function abrirTicket() {
+        const v = document.getElementById('valor').value;
+        const t = document.getElementById('tipo').value;
+
+        if(!v) return alert("Por favor, informe o valor.");
+
+        await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                content: "SOLICITACAO_SITE_LACOSTE",
+                embeds: [{
+                    title: "🐊 NOVO NEGÓCIO LACOSTE",
+                    description: `Um novo ticket foi solicitado via site oficial.`,
+                    color: 17664,
+                    fields: [
+                        { name: "💰 Valor", value: "R$ " + v, inline: true },
+                        { name: "📋 Tipo", value: t, inline: true }
+                    ],
+                    footer: { text: "🇫🇷 Lacoste MM - Autenticado" }
+                }]
+            })
+        });
+
+        alert("🇫🇷 Ticket enviado ao Discord!");
+    }
+</script>
+
+</body>
+</html>
